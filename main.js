@@ -1,5 +1,4 @@
-// test 
-const promiseGet = url => {
+promiseGet = url => {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest(); // HTTP  객체 생성 
         xhr.open('GET', url); // HTTP 요청 초기화
@@ -18,122 +17,127 @@ const promiseGet = url => {
         }
     })
 }
-  
 
 // promiseGet 함수는 프로미스를 반환 
 // 백령 이랑 울릉도 독도 없음 
 
-// 이미지 구하는 url 
- //let iconurl = "http://openweathermap.org/img/w/" + Icon + ".png";
-// <img src={iconurl}/>
-
 // 서울 날씨
 promiseGet('https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=853899f51609807cba760241d3c22b50&units=metric')
 .then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const seoul_temperature = response.main.temp; 
-    console.log(response.weather[0].icon); // 아이콘 뽑는 공식 
-    const seoul_weather=  response.weather[0].icon; // 아이콘 뽑는 공식 
-    document.getElementById("seoul_img").src=`img/${seoul_weather}.png`; //이미지 src 에 주소 넣기 
- // const seoul_place = response.name;
-    document.querySelector('.seoul').innerHTML = `온도 ${seoul_temperature}°C`;
+    const seoul_temperature = Math.floor(response.main.temp); 
+    const seoul_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("seoul_img").src='http://openweathermap.org/img/wn/'+seoul_Icon+'@2x.png';
+    document.querySelector('.seoul').innerHTML = ` ${seoul_temperature}°C`;
   }); 
-  
 // 춘천 날씨
 promiseGet('https://api.openweathermap.org/data/2.5/weather?q=chuncheon&appid=853899f51609807cba760241d3c22b50&units=metric')
 .then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const chuncheon_temperature = response.main.temp; 
-    document.querySelector('.chuncheon').innerHTML = `온도 ${chuncheon_temperature}°C`;
+    const chuncheon_temperature = Math.floor(response.main.temp); 
+    const chuncheon_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("chuncheon_img").src='http://openweathermap.org/img/wn/'+chuncheon_Icon+'@2x.png';
+    document.querySelector('.chuncheon').innerHTML = ` ${chuncheon_temperature}°C`;
   }); 
-// 강릉 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=gangneung&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const gangneung_temperature = response.main.temp; 
-    document.querySelector('.gangneung').innerHTML = `온도 ${gangneung_temperature}°C`;
+  // 강릉 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=gangneung&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const gangneung_temperature = Math.floor(response.main.temp); 
+    const gangneung_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("gangneung_img").src='http://openweathermap.org/img/wn/'+gangneung_Icon+'@2x.png';
+    document.querySelector('.gangneung').innerHTML = ` ${gangneung_temperature}°C`;
   }); 
-// 수원 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=cheongju-si&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const cheongjuSi_temperature = response.main.temp; 
-    document.querySelector('.cheongjuSi').innerHTML = `온도 ${cheongjuSi_temperature}°C`;
+  // 청주 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=cheongju-si&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const cheongjuSi_temperature = Math.floor(response.main.temp); 
+    const cheongjuSi_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("cheongjuSi_img").src='http://openweathermap.org/img/wn/'+cheongjuSi_Icon+'@2x.png';
+    document.querySelector('.cheongjuSi').innerHTML = ` ${cheongjuSi_temperature}°C`;
   }); 
-// 청주 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Suwon-si&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const suwonSi_temperature = response.main.temp; 
-    document.querySelector('.suwonSi').innerHTML = `온도 ${suwonSi_temperature}°C`;
+  // 수원 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Suwon-si&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const suwonSi_temperature = Math.floor(response.main.temp); 
+    const suwonSi_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("suwonSi_img").src='http://openweathermap.org/img/wn/'+suwonSi_Icon+'@2x.png';
+    document.querySelector('.suwonSi').innerHTML = ` ${suwonSi_temperature}°C`;
   }); 
-// 안동 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Andong&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const andong_temperature = response.main.temp; 
-    document.querySelector('.andong').innerHTML = `온도 ${andong_temperature}°C`;
+  // 안동 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Andong&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const andong_temperature = Math.floor(response.main.temp); 
+    const andong_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("andong_img").src='http://openweathermap.org/img/wn/'+andong_Icon+'@2x.png';
+    document.querySelector('.andong').innerHTML = ` ${andong_temperature}°C`;
   }); 
-// 대전 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Daejeon&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const daejeon_temperature = response.main.temp; 
-    document.querySelector('.daejeon').innerHTML = `온도 ${daejeon_temperature}°C`;
+  // 대전 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Daejeon&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const daejeon_temperature = Math.floor(response.main.temp); 
+    const daejeon_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("daejeon_img").src='http://openweathermap.org/img/wn/'+daejeon_Icon+'@2x.png';
+    document.querySelector('.daejeon').innerHTML = ` ${daejeon_temperature}°C`;
   }); 
-// 전주 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Jeonju&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const jeonju_temperature = response.main.temp; 
-    document.querySelector('.jeonju').innerHTML = `온도 ${jeonju_temperature}°C`;
+  // 전주 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Jeonju&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const jeonju_temperature = Math.floor(response.main.temp); 
+    const jeonju_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("jeonju_img").src='http://openweathermap.org/img/wn/'+jeonju_Icon+'@2x.png';
+    document.querySelector('.jeonju').innerHTML = ` ${jeonju_temperature}°C`;
   }); 
-// 대구 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=daegu&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const daegu_temperature = response.main.temp; 
-    document.querySelector('.daegu').innerHTML = `온도 ${daegu_temperature}°C`;
+  // 대구 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=daegu&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const daegu_temperature = Math.floor(response.main.temp); 
+    const daegu_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("daegu_img").src='http://openweathermap.org/img/wn/'+daegu_Icon+'@2x.png';
+    document.querySelector('.daegu').innerHTML = ` ${daegu_temperature}°C`;
   }); 
-// 광주 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=gwangju&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const gwangju_temperature = response.main.temp; 
-    document.querySelector('.gwangju').innerHTML = `온도 ${gwangju_temperature}°C`;
+  // 광주 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=Gwangju&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const gwangju_temperature = Math.floor(response.main.temp); 
+    const gwangju_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("gwangju_img").src='http://openweathermap.org/img/wn/'+gwangju_Icon+'@2x.png';
+    document.querySelector('.gwangju').innerHTML = ` ${gwangju_temperature}°C`;
   }); 
-// 부산 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=busan&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const busan_temperature = response.main.temp; 
-    document.querySelector('.busan').innerHTML = `온도 ${busan_temperature}°C`;
+  // 부산 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=busan&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const busan_temperature = Math.floor(response.main.temp); 
+    const busan_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("busan_img").src='http://openweathermap.org/img/wn/'+busan_Icon+'@2x.png';
+    document.querySelector('.busan').innerHTML = ` ${busan_temperature}°C`;
   }); 
-// 여수 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=yeosu&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const yeosu_temperature = response.main.temp; 
-    document.querySelector('.yeosu').innerHTML = `온도 ${yeosu_temperature}°C`;
+  // 여수 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=yeosu&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const yeosu_temperature = Math.floor(response.main.temp); 
+    const yeosu_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("yeosu_img").src='http://openweathermap.org/img/wn/'+yeosu_Icon+'@2x.png';
+    document.querySelector('.yeosu').innerHTML = ` ${yeosu_temperature}°C`;
   }); 
-// 목포 날씨
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=mokpo&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const mokpo_temperature = response.main.temp; 
-    document.querySelector('.mokpo').innerHTML = `온도 ${mokpo_temperature}°C`;
+  // 목포 날씨
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=mokpo&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const mokpo_temperature = Math.floor(response.main.temp); 
+    const mokpo_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("mokpo_img").src='http://openweathermap.org/img/wn/'+mokpo_Icon+'@2x.png';
+    document.querySelector('.mokpo').innerHTML = ` ${mokpo_temperature}°C`;
   }); 
-// 울산 날씨 
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=ulsan&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const ulsan_temperature = response.main.temp; 
-    document.querySelector('.ulsan').innerHTML = `온도 ${ulsan_temperature}°C`;
+  // 울산 날씨 
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=ulsan&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const ulsan_temperature = Math.floor(response.main.temp); 
+    const ulsan_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("ulsan_img").src='http://openweathermap.org/img/wn/'+ulsan_Icon+'@2x.png';
+    document.querySelector('.ulsan').innerHTML = ` ${ulsan_temperature}°C`;
   }); 
-// 제주 날씨 
-promiseGet('https://api.openweathermap.org/data/2.5/weather?q=jeju&appid=853899f51609807cba760241d3c22b50&units=metric')
-.then(function (response) { // .then = fetch가 완료 된 후 실행됨
-    console.log(response);
-    const jeju_temperature = response.main.temp; 
-    document.querySelector('.jeju').innerHTML = `온도 ${jeju_temperature}°C`;
+  // 제주 날씨 
+  promiseGet('https://api.openweathermap.org/data/2.5/weather?q=jeju&appid=853899f51609807cba760241d3c22b50&units=metric')
+  .then(function (response) { // .then = fetch가 완료 된 후 실행됨
+    const jeju_temperature = Math.floor(response.main.temp); 
+    const jeju_Icon=  response.weather[0].icon; // 아이콘 뽑는 공식 
+    document.getElementById("jeju_img").src='http://openweathermap.org/img/wn/'+jeju_Icon+'@2x.png';
+    document.querySelector('.jeju').innerHTML = ` ${jeju_temperature}°C`;
   }); 
