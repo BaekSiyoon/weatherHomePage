@@ -8,96 +8,104 @@
     <title>Welcome to the weather homePage</title>
     <!-- link -->
     <link rel="stylesheet" href="css_style/main.css">
-    <script src="/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
         integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <nav id="nav_st">
-        <div>
-            <input type="text" placeholder="날씨가 궁금한 지역을 검색해주세요 ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-    </nav>
-
     <section id="section_st">
         <div id="main_div_st">
             <img id="map_img" src="img/map.png" alt="우리나라 지도">
             <!-- nation 지역 div -->
-            <div id="seoul_div">
+            <div id="seoul_div" onclick="clickAreaDetailPage(area_seoul)">
                 <span>서울</span>
+                <input type="text" id="area_seoul" value="seoul" style="display: none;">
                 <img class=imgAll_style id="seoul_img" src="" />
                 <span class="seoul"></span>
             </div>
-            <div id="chuncheon_div">
+            <div id="chuncheon_div" onclick="clickAreaDetailPage(area_chuncheon)">
                 <span>춘천</span>
+                <input type="text" id="area_chuncheon" value="chuncheon" style="display: none;">
                 <img class=imgAll_style id="chuncheon_img" src="" />
                 <span class="chuncheon"></span>
             </div>
-            <div id="gangneung_div">
+            <!-- durltj qnxj -->
+            <div id="gangneung_div" onclick="clickAreaDetailPage(area_gangneung)">
                 <span>강릉</span>
+                <input type="text" id="area_gangneung" value="gangneung" style="display: none;">
                 <img class=imgAll_style id="gangneung_img" src="" />
                 <span class="gangneung"></span>
             </div>
-            <div id="cheongjuSi_div">
+            <div id="cheongjuSi_div" onclick="clickAreaDetailPage(area_cheongjuSi)">
                 <span>청주</span>
+                <input type="text" id="area_cheongjuSi" value="cheongjuSi" style="display: none;">
                 <img class=imgAll_style id="cheongjuSi_img" src="" />
                 <span class="cheongjuSi"></span>
             </div>
-            <div id="suwonSi_div">
+            <div id="suwonSi_div" onclick="clickAreaDetailPage(area_suwonSi)">
                 <span>수원</span>
+                <input type="text" id="area_suwonSi" value="suwonSi" style="display: none;">
                 <img class=imgAll_style id="suwonSi_img" src="" />
                 <span class="suwonSi"></span>
             </div>
-            <div id="andong_div">
+            <div id="andong_div" onclick="clickAreaDetailPage(area_andong)">
                 <span>안동</span>
+                <input type="text" id="area_andong" value="andong" style="display: none;">
                 <img class=imgAll_style id="andong_img" src="" />
                 <span class="andong"></span>
             </div>
-            <div id="daejeon_div">
+            <div id="daejeon_div" onclick="clickAreaDetailPage(area_daejeon)">
                 <span>대전</span>
+                <input type="text" id="area_daejeon" value="daejeon" style="display: none;">
                 <img class=imgAll_style id="daejeon_img" src="" />
                 <span class="daejeon"></span>
             </div>
-            <div id="jeonju_div">
+            <div id="jeonju_div" onclick="clickAreaDetailPage(area_jeonju)">
                 <span>전주</span>
+                <input type="text" id="area_jeonju" value="jeonju" style="display: none;">
                 <img class=imgAll_style id="jeonju_img" src="" />
                 <span class="jeonju"></span>
             </div>
-            <div id="daegu_div">
+            <div id="daegu_div" onclick="clickAreaDetailPage(area_daegu)">
                 <span>대구</span>
+                <input type="text" id="area_daegu" value="daegu" style="display: none;">
                 <img class=imgAll_style id="daegu_img" src="" />
                 <span class="daegu"></span>
             </div>
-            <div id="gwangju_div">
+            <div id="gwangju_div" onclick="clickAreaDetailPage(area_gwangju)">
                 <span>광주</span>
+                <input type="text" id="area_gwangju" value="gwangju" style="display: none;">
                 <img class=imgAll_style id="gwangju_img" src="" />
                 <span class="gwangju"></span>
             </div>
-            <div id="busan_div">
+            <div id="busan_div" onclick="clickAreaDetailPage(area_busan)">
                 <span>부산</span>
+                <input type="text" id="area_busan" value="busan" style="display: none;">
                 <img class=imgAll_style id="busan_img" src="" />
                 <span class="busan"></span>
             </div>
-            <div id="yeosu_div">
+            <div id="yeosu_div" onclick="clickAreaDetailPage(area_yeosu)">
                 <span>여수</span>
+                <input type="text" id="area_yeosu" value="yeosu" style="display: none;">
                 <img class=imgAll_style id="yeosu_img" src="" />
                 <span class="yeosu"></span>
             </div>
-            <div id="mokpo_div">
+            <div id="mokpo_div" onclick="clickAreaDetailPage(area_mokpo)">
                 <span>목포</span>
+                <input type="text" id="area_mokpo" value="mokpo" style="display: none;">
                 <img class=imgAll_style id="mokpo_img" src="" />
                 <span class="mokpo"></span>
             </div>
-            <div id="ulsan_div">
+            <div id="ulsan_div" onclick="clickAreaDetailPage(area_ulsan)">
                 <span>울산</span>
+                <input type="text" id="area_ulsan" value="ulsan" style="display: none;">
                 <img class=imgAll_style id="ulsan_img" src="" />
                 <span class="ulsan"></span>
             </div>
-            <div id="jeju_div">
+            <div id="jeju_div" onclick="clickAreaDetailPage(area_jeju)">
                 <span>제주</span>
+                <input type="text" id="area_jeju" value="jeju" style="display: none;">
                 <img class=imgAll_style id="jeju_img" src="" />
                 <span class="jeju"></span>
             </div>
@@ -105,5 +113,9 @@
     </section>
 </body>
 <script src="/main.js"></script>
+<script src="/clickAreaDetail.js"></script>
+
+
+
 
 </html>

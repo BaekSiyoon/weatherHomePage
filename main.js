@@ -7,9 +7,6 @@ promiseGet = url => {
       if (xhr.status === 200) {// 응답 코드 
         resolve(JSON.parse(xhr.response));
         console.log(JSON.parse(xhr.response).main.temp);
-        // let a = JSON.parse(xhr.response).main.temp;
-        // map_name.innerHTML = `온도 ${a} `;
-
       } else {
         reject(new Error(xhr.status));
         console.log(new Error(xhr.status));
