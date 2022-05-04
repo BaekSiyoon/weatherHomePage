@@ -55,8 +55,47 @@ function getWeather(lat, lon) {
             document.querySelector('#uvi').innerHTML = `자외선지수 ${uvi}`;
             document.querySelector('#sunrise_time').innerHTML = `일출시간 ${sunrise_time}`;
             document.querySelector('#sunset_time').innerHTML = `일몰시간 ${sunset_time}`;
+
+
+            // 시간별 
+            for (i = 0; i <= 7; i++) {
+                document.querySelector('#hourly_icon_' + `${i}`).src = `http://openweathermap.org/img/wn/${json.hourly[i].weather[0].icon}@2x.png`;
+                document.querySelector('#hourly_dt_' + `${i}`).innerHTML = `${new Date(json.hourly[i].dt * 1000).getHours() + "시"}`;
+                document.querySelector('#hourly_temp_' + `${i}`).innerHTML = `${Math.floor(json.hourly[i].temp)}°C`;
+                document.querySelector('#hourly_humidity_' + `${i}`).innerHTML = `습도 ${Math.floor(json.hourly[i].humidity)}%`;
+                document.querySelector('#hourly_uvi_' + `${i}`).innerHTML = `자외선지수 ${Math.floor(json.hourly[i].uvi)}`;
+
+                // 요일별 
+                let today = new Date(json.daily[i].dt * 1000).getDay();
+                const weekday = new Array(7);
+                weekday[0] = "Sunday";
+                weekday[1] = "Monday";
+                weekday[2] = "Tuesday";
+                weekday[3] = "Wednesday";
+                weekday[4] = "Thursday";
+                weekday[5] = "Friday";
+                weekday[6] = "Saturday";
+
+                let todayLabel = weekday[today];
+                document.querySelector('#daily_icon_' + `${i}`).src = `http://openweathermap.org/img/wn/${json.daily[i].weather[0].icon}@2x.png`;
+                document.querySelector('#daily_dt_' + `${i}`).innerHTML = `${todayLabel}`;
+                document.querySelector('#daily_tempMin_' + `${i}`).innerHTML = `최소 ${Math.floor(json.daily[i].temp.min)}°C`;
+                document.querySelector('#daily_tempMax_' + `${i}`).innerHTML = `최대 ${Math.floor(json.daily[i].temp.max)}°C`;
+                document.querySelector('#daily_humidity_' + `${i}`).innerHTML = `습도 ${Math.floor(json.daily[i].humidity)}%`;
+            }
+
         })
         .catch((error) => console.log("error:", error));
 }
 
 init();
+
+function hourlyShow() {
+    document.querySelector("#hourlyArticle").style.display = "";
+    document.querySelector("#dailyArticle").style.display = "none";
+}
+function dailyShow() {
+    document.querySelector("#hourlyArticle").style.display = "none";
+    document.querySelector("#dailyArticle").style.display = "";
+}
+
