@@ -22,8 +22,10 @@
 <body>
     <nav id="nav_st">
         <div>
-            <input type="text" placeholder="날씨가 궁금한 지역을 검색해주세요 ">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="userInput" placeholder="날씨가 궁금한 지역을 검색해주세요" onkeypress="userSearch(event)" />
+         <!--
+             <i class="fa-solid fa-magnifying-glass" onclick="userSearch()"></i>
+         --> 
         </div>
     </nav>
 
