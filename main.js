@@ -19,6 +19,7 @@ promiseGet = url => {
 // 백령 이랑 울릉도 독도 없음 
 
 // 서울 날씨
+
 promiseGet('https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=853899f51609807cba760241d3c22b50&units=metric')
   .then(function (response) { // .then = fetch가 완료 된 후 실행됨
     const seoul_temperature = Math.floor(response.main.temp);
@@ -26,6 +27,7 @@ promiseGet('https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=853899
     document.querySelector('#seoul_img').src = `http://openweathermap.org/img/wn/${seoul_Icon}@2x.png`;
     document.querySelector('.seoul').innerHTML = ` ${seoul_temperature}°C`;
   });
+
 // 춘천 날씨
 promiseGet('https://api.openweathermap.org/data/2.5/weather?q=chuncheon&appid=853899f51609807cba760241d3c22b50&units=metric')
   .then(function (response) { // .then = fetch가 완료 된 후 실행됨
