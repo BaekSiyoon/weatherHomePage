@@ -2,13 +2,13 @@ let num = 0; // 위도 경도 기반 areaDetail 변수
 let clickNumber = 0; // cilckAreaDetail 변수 
 
 
- init = () => {
+init = () => {
     askForCoords();
 }
 
 //사용자 위치 물어보고 사용자가 거부시 메인 화면으로 이동 
 if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html") {
-     askForCoords = () => {
+    askForCoords = () => {
         if (confirm("사용자 위치를 허용하시겠습니까? 취소 시 메인페이지로 이동합니다.")) {
             navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
         } else {
@@ -17,25 +17,25 @@ if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html")
     }
 
     //좌표를 얻는데 성공했을 때 쓰이는 함수 
-     handleSuccess = position => {
+    handleSuccess = position => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         getWeather(latitude, longitude); //얻은 좌표값을 바탕으로 날씨정보를 불러온다.
     }
     //좌표를 얻는데 실패했을 때 쓰이는 함수 
-     handleError = () => {
+    handleError = () => {
         console.log("실패");
     }
 }
 
-if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetail.html" ) {
-     clickAreaDetailPage = area_name => {
+if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetail.html") {
+    clickAreaDetailPage = area_name => {
         let areaName_ = area_name.value;
         location.href = `areaDetail.html?areaName=${areaName_}`;
     };
 
     // url 에서 파라미터 가져오는 정규 표현식
-     getParameterByName = areaName => {
+    getParameterByName = areaName => {
         areaName = areaName.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         let regex = new RegExp("[\\?&]" + areaName + "=([^&#]*)"), results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
@@ -43,38 +43,38 @@ if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetai
 
     let areaName = getParameterByName('areaName');
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${areaName}&appid=853899f51609807cba760241d3c22b50&units=metric`;
-    
-       if ( window.location.href != "http://127.0.0.1:5500/index.html") { // 상세 페이지에서만 실행 
-            let lat = "";
-            let lon = "";
-            promiseGet = url => {
-                return new Promise((resolve, reject) => {
-                    const xhr = new XMLHttpRequest(); // HTTP  객체 생성 
-                    xhr.open('GET', url); // HTTP 요청 초기화
-                    xhr.send(); // 요청 전송 
-                    xhr.onload = () => { // 요청 성공시 
-                        if (xhr.status === 200) {// 응답 코드 
-                            resolve(JSON.parse(xhr.response));
-                            console.log(JSON.parse(xhr.response).main.temp);
-                        } else {
-                            reject(new Error(xhr.status));
-                            console.log(new Error(xhr.status));
-                        }
+
+    if (window.location.href != "http://127.0.0.1:5500/index.html") { // 상세 페이지에서만 실행 
+        let lat = "";
+        let lon = "";
+        promiseGet = url => {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest(); // HTTP  객체 생성 
+                xhr.open('GET', url); // HTTP 요청 초기화
+                xhr.send(); // 요청 전송 
+                xhr.onload = () => { // 요청 성공시 
+                    if (xhr.status === 200) {// 응답 코드 
+                        resolve(JSON.parse(xhr.response));
+                        console.log(JSON.parse(xhr.response).main.temp);
+                    } else {
+                        reject(new Error(xhr.status));
+                        console.log(new Error(xhr.status));
                     }
-                })
-            }
-            promiseGet(url) // 해당 지역의 위도와 경도 알아내서 getWeather 로 보내준다
-                .then(function (response) {
-                    lat = response.coord.lat;
-                    lon = response.coord.lon;
-                    getWeather(lat, lon);
-                });
-      }
-    
+                }
+            })
+        }
+        promiseGet(url) // 해당 지역의 위도와 경도 알아내서 getWeather 로 보내준다
+            .then(function (response) {
+                lat = response.coord.lat;
+                lon = response.coord.lon;
+                getWeather(lat, lon);
+            });
+    }
+
 }
 
 //날씨 api를 통해 날씨에 관련된 정보들을 받아온다.
- getWeather = (lat, lon) => {
+getWeather = (lat, lon) => {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=kr&appid=853899f51609807cba760241d3c22b50&units=metric`)
         .then(function (response) {
             console.log(response.json);
@@ -133,18 +133,20 @@ if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetai
 
 init();
 
- hourlyShow = () => {
+// 검색해서 상세 페이지 들어가게 되면 화살표 함수로 했을때 에러 나서 function  으로 해둠 
+function hourlyShow (){ 
     document.querySelector("#hourlyArticle").style.display = "";
     document.querySelector("#dailyArticle").style.display = "none";
 }
- dailyShow = () =>{
+function dailyShow (){
     document.querySelector("#hourlyArticle").style.display = "none";
     document.querySelector("#dailyArticle").style.display = "";
 }
 
 userSearch = (e) => {
     var userInput = document.getElementById("userInput").value;
-    if(e.keyCode == 13){
+    if (e.keyCode == 13) {
+        location.href = `areaDetail.html?areaName=${userInput}`;
         console.log(userInput);
     };
 }
