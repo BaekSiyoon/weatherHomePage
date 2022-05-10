@@ -105,26 +105,26 @@ getWeather = (lat, lon) => {
                 document.querySelector('#hourly_icon_' + `${i}`).src = `http://openweathermap.org/img/wn/${json.hourly[i].weather[0].icon}@2x.png`;
                 document.querySelector('#hourly_dt_' + `${i}`).innerHTML = `${new Date(json.hourly[i].dt * 1000).getHours() + "시"}`;
                 document.querySelector('#hourly_temp_' + `${i}`).innerHTML = `${Math.floor(json.hourly[i].temp)}°C`;
-                document.querySelector('#hourly_humidity_' + `${i}`).innerHTML = `습도 ${Math.floor(json.hourly[i].humidity)}%`;
-                document.querySelector('#hourly_uvi_' + `${i}`).innerHTML = `자외선지수 ${Math.floor(json.hourly[i].uvi)}`;
+                document.querySelector('#hourly_humidity_' + `${i}`).innerHTML = ` ${Math.floor(json.hourly[i].humidity)}%`;
+                document.querySelector('#hourly_uvi_' + `${i}`).innerHTML = ` ${Math.floor(json.hourly[i].uvi)}`;
 
                 // 요일별 
                 let today = new Date(json.daily[i].dt * 1000).getDay();
                 const weekday = new Array(7);
-                weekday[0] = "Sunday";
-                weekday[1] = "Monday";
-                weekday[2] = "Tuesday";
-                weekday[3] = "Wednesday";
-                weekday[4] = "Thursday";
-                weekday[5] = "Friday";
-                weekday[6] = "Saturday";
+                weekday[0] = "Sun";
+                weekday[1] = "Mon";
+                weekday[2] = "Tue";
+                weekday[3] = "Wed";
+                weekday[4] = "Thu";
+                weekday[5] = "Fri";
+                weekday[6] = "Sat";
 
                 let todayLabel = weekday[today];
                 document.querySelector('#daily_icon_' + `${i}`).src = `http://openweathermap.org/img/wn/${json.daily[i].weather[0].icon}@2x.png`;
                 document.querySelector('#daily_dt_' + `${i}`).innerHTML = `${todayLabel}`;
-                document.querySelector('#daily_tempMin_' + `${i}`).innerHTML = `최소 ${Math.floor(json.daily[i].temp.min)}°C`;
-                document.querySelector('#daily_tempMax_' + `${i}`).innerHTML = `최대 ${Math.floor(json.daily[i].temp.max)}°C`;
-                document.querySelector('#daily_humidity_' + `${i}`).innerHTML = `습도 ${Math.floor(json.daily[i].humidity)}%`;
+                document.querySelector('#daily_tempMin_' + `${i}`).innerHTML = ` ${Math.floor(json.daily[i].temp.min)}°C`;
+                document.querySelector('#daily_tempMax_' + `${i}`).innerHTML = ` ${Math.floor(json.daily[i].temp.max)}°C`;
+                document.querySelector('#daily_humidity_' + `${i}`).innerHTML = ` ${Math.floor(json.daily[i].humidity)}%`;
             }
 
         })

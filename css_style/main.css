@@ -3,18 +3,15 @@
     height: auto;
     position: relative;
 }
-
 #main_div_st {
     text-align: center;
     z-index: 0;
 }
-
 #map_img {
     width: 30%;
     height: 30%;
     z-index: 1;
 }
-
 .imgAll_style {
     position: absolute;
     bottom: 6px;
@@ -22,7 +19,6 @@
     height: 80px;
     width: 80px;
 }
-
 #seoul_div {
     z-index: 2;
     display: inline;
@@ -30,7 +26,6 @@
     left: 41%;
     top: 23%;
 }
-
 #chuncheon_div {
     z-index: 2;
     display: inline;
@@ -38,7 +33,6 @@
     left: 48%;
     top: 11%;
 }
-
 #gangneung_div {
     z-index: 2;
     display: inline;
@@ -46,7 +40,6 @@
     left: 53%;
     top: 19%;
 }
-
 #cheongjuSi_div {
     z-index: 2;
     display: inline;
@@ -54,7 +47,6 @@
     left: 48%;
     top: 28%;
 }
-
 #suwonSi_div {
     z-index: 2;
     display: inline;
@@ -62,7 +54,6 @@
     left: 40%;
     top: 38%;
 }
-
 #andong_div {
     z-index: 2;
     display: inline;
@@ -70,7 +61,6 @@
     left: 52%;
     top: 40%;
 }
-
 #daejeon_div {
     z-index: 2;
     display: inline;
@@ -78,7 +68,6 @@
     left: 45%;
     top: 48%;
 }
-
 #jeonju_div {
     z-index: 2;
     display: inline;
@@ -86,7 +75,6 @@
     left: 40%;
     top: 56%;
 }
-
 #daegu_div {
     z-index: 2;
     display: inline;
@@ -94,7 +82,6 @@
     left: 50%;
     top: 58%;
 }
-
 #gwangju_div {
     z-index: 2;
     display: inline;
@@ -102,7 +89,6 @@
     left: 40%;
     top: 70%;
 }
-
 #busan_div {
     z-index: 2;
     display: inline;
@@ -110,7 +96,6 @@
     left: 52%;
     top: 78%;
 }
-
 #yeosu_div {
     z-index: 2;
     display: inline;
@@ -118,7 +103,6 @@
     left: 45%;
     top: 80%;
 }
-
 #mokpo_div {
     z-index: 2;
     display: inline;
@@ -126,7 +110,6 @@
     left: 35%;
     top: 80%;
 }
-
 #ulsan_div {
     z-index: 2;
     display: inline;
@@ -134,7 +117,6 @@
     left: 56%;
     top: 65%;
 }
-
 #jeju_div {
     z-index: 2;
     display: inline;
