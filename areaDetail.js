@@ -143,6 +143,8 @@ function dailyShow (){
     document.querySelector("#dailyArticle").style.display = "";
 }
 
+// 영어로 검색 하는데 자동완성 되게끔 
+// 아니면 한글로 검색 해서 자동완성으로 뜨는 걸 클릭 하면 그버튼?의  value 값을 영어로 미리 지정 해두고 그 value 값을 보내보자 
 userSearch = (e) => {
     var userInput = document.getElementById("userInput").value;
     if (e.keyCode == 13) {
