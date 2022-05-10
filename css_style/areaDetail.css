@@ -6,3 +6,112 @@
 #areaDetail_div_st {
     text-align: center;
 }
+
+#temperature {
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+
+#hourlyArticle {
+    display: flex;
+    margin: 4%;
+    justify-content: center;
+}
+
+#dailyArticle {
+    display: flex;
+    margin: 4%;
+    justify-content: center;
+}
+
+#buttonDivSt {
+    text-align: center;
+    margin: 3%;
+}
+
+#hourlyButton,
+#dailyButton {
+    box-shadow: inset 0px 0px 0px 0px #bbdaf7;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 10px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+
+}
+
+#hourlyButton:hover,
+#dailyButton:hover {
+    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color: #378de5;
+}
+
+#hourlyButton:active,
+#dailyButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.allDivSt {
+    display: table-cell;
+    margin: 3px;
+    border-style: outset;
+    padding: 2%;
+    border-radius: 30%;
+}
+
+.allSpanst {
+    display: flex;
+    justify-content: center;
+}
+
+.allTempSt {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    position: relative;
+    bottom: 90px;
+    left: 13px;
+    font-weight: 600;
+    font-size: larger;
+}
+
+#sun_moon_DivSt {
+    display: inline-block;
+    margin: 0 1%;
+}
+
+#hum_uvi_DivSt {
+    display: inline-block;
+    margin: 0 1%;
+
+}
+
+#temp_divSt {
+    display: inline-block;
+    position: absolute;
+
+}
+
+#temperature {
+    position: relative;
+    left: -10px
+}
+
+#description {
+    position: relative;
+    left: 10px
+}
+
+#currentWeather_img {
+    position: relative;
+    left: -16px;
+}

@@ -8,61 +8,14 @@
     <title>Welcome to the weatherDetail homePage</title>
     <!-- link -->
     <link rel="stylesheet" href="css_style/areaDetail.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
-<style>
-    #temperature {
-        font-weight: bolder;
-        font-size: xxx-large;
-    }
-
-    #hourlyArticle {
-
-        display: flex;
-        margin: 4%;
-        justify-content: center;
-    }
-
-    #buttonDivSt {
-        text-align: center;
-        margin: 3%;
-    }
-
-    .allDivSt {
-        display: table-cell;
-        margin: 3px;
-        border-style: outset;
-        padding: 2%;
-        border-radius: 30%;
-    }
-
-    .allSpanst {
-        display: flex;
-        justify-content: center;
-    }
-
-    .allTempSt {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-        position: relative;
-        bottom: 90px;
-        left: 13px;
-        font-weight: 600;
-        font-size: larger;
-    }
-</style>
 
 <body>
     <nav id="nav_st">
         <div>
-            <input type="text" id="userInput" placeholder="날씨가 궁금한 지역을 검색해주세요" onkeypress="userSearch(event)" />
-            <!--
-             <i class="fa-solid fa-magnifying-glass" onclick="userSearch()"></i>
-         -->
+            <input type="text" id="userInput" placeholder="날씨가 궁금한 지역을 검색해주세요" onkeypress="userSearch(event)">
+            <img src="/img/icon-search.png" alt="검색">
+            </input>
         </div>
     </nav>
 
@@ -70,14 +23,22 @@
         <div id="areaDetail_div_st">
             <h3>현재날씨</h3>
             <img id="currentWeather_img" src="" alt="weather">
-            <span id="temperature"></span> <!-- 온도 -->
-            <span id="description"></span> <!-- 날씨 상태 -->
+            <div id="temp_divSt">
+                <span id="temperature"></span> <!-- 온도 -->
+                <br>
+                <span id="description"></span> <!-- 날씨 상태 -->
+            </div>
             <br>
-            <span id="humidity"></span> <!-- 습도 -->
-            <span id="uvi"></span> <!-- 자외선 지수 -->
-            <br>
-            <i class="fa-regular fa-sun-bright"></i><span id="sunrise_time"></span> <!-- 일출 시간-->
-            <i class="fa-solid fa-moon-stars"></i><span id="sunset_time"></span> <!-- 일몰 시간 -->
+            <div id="sun_moon_DivSt">
+                <img src="/img/icon-sun.png" alt="일출"><span id="sunrise_time"></span> <!-- 일출 시간-->
+                <br>
+                <img src="/img/icon-night.png" alt="일몰"><span id="sunset_time"></span> <!-- 일몰 시간 -->
+            </div>
+            <div id="hum_uvi_DivSt">
+                <img src="/img/icon-humidity.png" alt="습도"><span id="humidity"></span> <!-- 습도 -->
+                <br>
+                <img src="/img/icon-uvi.png" alt="자외선 지수"><span id="uvi"></span> <!-- 자외선 지수 -->
+            </div>
         </div>
         <div id="buttonDivSt">
             <button id="hourlyButton" onclick="hourlyShow()">시간별</button>
@@ -147,50 +108,71 @@
             <div class="allDivSt">
                 <span id="daily_dt_0" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_0" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_0"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_0"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_0"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_1" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_1" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_1"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_1"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_1"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_2" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_2" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_2"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_2"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_2"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_3" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_3" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_3"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_3"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_3"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_4" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_4" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_4"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_4"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_4"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_5" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_5" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_5"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_5"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_5"></span> <!-- 습도 -->
             </div>
             <div class="allDivSt">
                 <span id="daily_dt_6" class="allSpanst"></span> <!-- 요일 -->
                 <img id="daily_icon_6" src="" alt="weather">
+                <br>
                 <span id="daily_tempMin_6"></span> <!-- 최소 온도 -->
+                <br>
                 <span id="daily_tempMax_6"></span> <!-- 최대 온도 -->
+                <br>
                 <span id="daily_humidity_6"></span> <!-- 습도 -->
             </div>
         </article>

@@ -86,19 +86,19 @@ getWeather = (lat, lon) => {
             const Icon = json.current.weather[0].icon; // 아이콘 뽑는 공식          
             const temperature = Math.floor(json.current.temp); // 온도
             const description = json.current.weather[0].description; // 날씨상태
-            const humidity = Math.floor(json.current.humidity); //습도
-            const uvi = Math.floor(json.current.uvi); // 자외선 지수 
             const sunrise = new Date(json.current.sunrise * 1000); // 일출시간
             const sunrise_time = `${sunrise.getHours()}시${sunrise.getMinutes()}분`; // 시간 변환 
             const sunset = new Date(json.current.sunset * 1000); // 일몰시간
             const sunset_time = `${sunset.getHours()}시${sunset.getMinutes()}분`; // 시간 변환 
+            const humidity = Math.floor(json.current.humidity); //습도
+            const uvi = Math.floor(json.current.uvi); // 자외선 지수 
             document.querySelector('#currentWeather_img').src = `http://openweathermap.org/img/wn/${Icon}@2x.png`;
             document.querySelector('#temperature').innerHTML = `${temperature}°C`;
             document.querySelector('#description').innerHTML = `${description}`;
-            document.querySelector('#humidity').innerHTML = `습도 ${humidity}%`;
-            document.querySelector('#uvi').innerHTML = `자외선지수 ${uvi}`;
-            document.querySelector('#sunrise_time').innerHTML = `일출시간 ${sunrise_time}`;
-            document.querySelector('#sunset_time').innerHTML = `일몰시간 ${sunset_time}`;
+            document.querySelector('#sunrise_time').innerHTML = ` ${sunrise_time}`;
+            document.querySelector('#sunset_time').innerHTML = ` ${sunset_time}`;
+            document.querySelector('#humidity').innerHTML = ` ${humidity}%`;
+            document.querySelector('#uvi').innerHTML = ` ${uvi}`;
 
             // 시간별 
             for (i = 0; i <= 7; i++) {
@@ -134,11 +134,11 @@ getWeather = (lat, lon) => {
 init();
 
 // 검색해서 상세 페이지 들어가게 되면 화살표 함수로 했을때 에러 나서 function  으로 해둠 
-function hourlyShow (){ 
+function hourlyShow() {
     document.querySelector("#hourlyArticle").style.display = "";
     document.querySelector("#dailyArticle").style.display = "none";
 }
-function dailyShow (){
+function dailyShow() {
     document.querySelector("#hourlyArticle").style.display = "none";
     document.querySelector("#dailyArticle").style.display = "";
 }
