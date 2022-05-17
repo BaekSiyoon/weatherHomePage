@@ -1,6 +1,6 @@
 let num = 0; // 위도 경도 기반 areaDetail 변수 
 let clickNumber = 0; // cilckAreaDetail 변수 
-
+let userInput = "";
 
 init = () => {
     askForCoords();
@@ -30,8 +30,9 @@ if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html")
 
 if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetail.html") {
     clickAreaDetailPage = area_name => {
-        let areaName_ = area_name.value;
+         let areaName_ = area_name.value;
         location.href = `areaDetail.html?areaName=${areaName_}`;
+       
     };
 
     // url 에서 파라미터 가져오는 정규 표현식
@@ -143,12 +144,18 @@ function dailyShow() {
     document.querySelector("#dailyArticle").style.display = "";
 }
 
-// 영어로 검색 하는데 자동완성 되게끔 
-// 아니면 한글로 검색 해서 자동완성으로 뜨는 걸 클릭 하면 그버튼?의  value 값을 영어로 미리 지정 해두고 그 value 값을 보내보자 
-userSearch = (e) => {
-    var userInput = document.getElementById("userInput").value;
+
+function userSearch(e){
+    console.log(e);
+    userInput = document.getElementById("userInput").value;
     if (e.keyCode == 13) {
-        location.href = `areaDetail.html?areaName=${userInput}`;
-        console.log(userInput);
+     location.href = `areaDetail.html?areaName=${userInput}`;
+     console.log(userInput);
     };
+
+}
+function clickSearch(){
+     userInput = document.getElementById("userInput").value;
+    location.href = `areaDetail.html?areaName=${userInput}`;
+    console.log(userInput);
 }
