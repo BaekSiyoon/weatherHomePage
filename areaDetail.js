@@ -9,7 +9,6 @@ init = () => {
 //사용자 위치 물어보고 사용자가 거부시 메인 화면으로 이동 
 if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html") {
     askForCoords = () => {
-        
         if (confirm("사용자 위치를 허용하시겠습니까? 취소 시 메인페이지로 이동합니다.")) {
             navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
         } else {

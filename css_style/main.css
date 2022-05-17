@@ -10,7 +10,7 @@
 }
 
 .all_body_st {
-    background-image: url('/img/cloudy-g9b41ece38_1280.jpg');
+    background-image: url('/img/background_image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -93,7 +93,6 @@
     left: 46%;
     top: 68%;
     color: #fff;
-    ;
 }
 
 #jeonju_div {
@@ -103,7 +102,6 @@
     left: 40%;
     top: 74%;
     color: #fff;
-    ;
 }
 
 #daegu_div {
@@ -113,7 +111,6 @@
     left: 50%;
     top: 79%;
     color: #fff;
-    ;
 }
 
 #gwangju_div {
@@ -123,7 +120,6 @@
     left: 39%;
     top: 88%;
     color: #fff;
-    ;
 }
 
 #busan_div {
@@ -133,7 +129,6 @@
     left: 51%;
     top: 97%;
     color: #fff;
-    ;
 }
 
 #yeosu_div {
@@ -143,7 +138,6 @@
     left: 44%;
     top: 99%;
     color: #fff;
-    ;
 }
 
 #mokpo_div {
@@ -151,9 +145,8 @@
     display: inline;
     position: absolute;
     left: 34%;
-    top: 102%;
-    color: #fff;
-    ;
+    top: 101%;
+    color: #fff;  
 }
 
 #ulsan_div {
@@ -163,7 +156,6 @@
     left: 56%;
     top: 85%;
     color: #fff;
-    ;
 }
 
 #jeju_div {
@@ -173,5 +165,4 @@
     left: 36%;
     top: 113%;
     color: #fff;
-    ;
 }
