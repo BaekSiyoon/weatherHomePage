@@ -30,9 +30,9 @@ if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html")
 
 if (clickNumber == 0 && window.location.href != "http://127.0.0.1:5500/areaDetail.html") {
     clickAreaDetailPage = area_name => {
-         let areaName_ = area_name.value;
+        let areaName_ = area_name.value;
         location.href = `areaDetail.html?areaName=${areaName_}`;
-       
+
     };
 
     // url 에서 파라미터 가져오는 정규 표현식
@@ -145,17 +145,23 @@ function dailyShow() {
 }
 
 
-function userSearch(e){
+function userSearch(e) {
     console.log(e);
     userInput = document.getElementById("userInput").value;
-    if (e.keyCode == 13) {
-     location.href = `areaDetail.html?areaName=${userInput}`;
-     console.log(userInput);
-    };
+    if (e.keyCode == 13 && userInput != "") {
+        location.href = `areaDetail.html?areaName=${userInput}`;
+        console.log(userInput);
+    } else {
+        alert("지역을 입력해주세요.")
+    }
 
 }
-function clickSearch(){
-     userInput = document.getElementById("userInput").value;
-    location.href = `areaDetail.html?areaName=${userInput}`;
-    console.log(userInput);
+function clickSearch() {
+    userInput = document.getElementById("userInput").value;
+    if (userInput != "") {
+        location.href = `areaDetail.html?areaName=${userInput}`;
+        console.log(userInput);
+    } else {
+        alert("지역을 입력해주세요.")
+    }
 }
