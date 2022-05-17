@@ -1,6 +1,6 @@
 let num = 0; // 위도 경도 기반 areaDetail 변수 
 let clickNumber = 0; // cilckAreaDetail 변수 
-let userInput = "";
+let userInput = ""; // 검색창에 사용자 입력값 
 
 init = () => {
     askForCoords();
@@ -9,6 +9,7 @@ init = () => {
 //사용자 위치 물어보고 사용자가 거부시 메인 화면으로 이동 
 if (num == 0 && window.location.href == "http://127.0.0.1:5500/areaDetail.html") {
     askForCoords = () => {
+        
         if (confirm("사용자 위치를 허용하시겠습니까? 취소 시 메인페이지로 이동합니다.")) {
             navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
         } else {

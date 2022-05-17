@@ -3,15 +3,27 @@
     height: auto;
     position: relative;
 }
+
 #main_div_st {
     text-align: center;
     z-index: 0;
 }
+
+.all_body_st {
+    background-image: url('/img/cloudy-g9b41ece38_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 #map_img {
     width: 30%;
     height: 30%;
     z-index: 1;
+    position: relative;
+    top: 85px;
 }
+
 .imgAll_style {
     position: absolute;
     bottom: 6px;
@@ -19,108 +31,147 @@
     height: 80px;
     width: 80px;
 }
+
 #seoul_div {
     z-index: 2;
     display: inline;
     position: absolute;
     left: 41%;
-    top: 23%;
+    top: 39%;
+    color: #fff;
 }
+
 #chuncheon_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 48%;
-    top: 11%;
+    left: 47%;
+    top: 30%;
+    color: #fff;
 }
+
 #gangneung_div {
     z-index: 2;
     display: inline;
     position: absolute;
     left: 53%;
-    top: 19%;
+    top: 37%;
+    color: #fff;
 }
+
 #cheongjuSi_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 48%;
-    top: 28%;
+    left: 47%;
+    top: 48%;
+    color: #fff;
 }
+
 #suwonSi_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 40%;
-    top: 38%;
+    left: 39%;
+    top: 59%;
+    color: #fff;
 }
+
 #andong_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 52%;
-    top: 40%;
+    left: 53%;
+    top: 59%;
+    color: #fff;
 }
+
 #daejeon_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 45%;
-    top: 48%;
+    left: 46%;
+    top: 68%;
+    color: #fff;
+    ;
 }
+
 #jeonju_div {
     z-index: 2;
     display: inline;
     position: absolute;
     left: 40%;
-    top: 56%;
+    top: 74%;
+    color: #fff;
+    ;
 }
+
 #daegu_div {
     z-index: 2;
     display: inline;
     position: absolute;
     left: 50%;
-    top: 58%;
+    top: 79%;
+    color: #fff;
+    ;
 }
+
 #gwangju_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 40%;
-    top: 70%;
+    left: 39%;
+    top: 88%;
+    color: #fff;
+    ;
 }
+
 #busan_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 52%;
-    top: 78%;
+    left: 51%;
+    top: 97%;
+    color: #fff;
+    ;
 }
+
 #yeosu_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 45%;
-    top: 80%;
+    left: 44%;
+    top: 99%;
+    color: #fff;
+    ;
 }
+
 #mokpo_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 35%;
-    top: 80%;
+    left: 34%;
+    top: 102%;
+    color: #fff;
+    ;
 }
+
 #ulsan_div {
     z-index: 2;
     display: inline;
     position: absolute;
     left: 56%;
-    top: 65%;
+    top: 85%;
+    color: #fff;
+    ;
 }
+
 #jeju_div {
     z-index: 2;
     display: inline;
     position: absolute;
-    left: 37%;
-    top: 98%;
+    left: 36%;
+    top: 113%;
+    color: #fff;
+    ;
 }
