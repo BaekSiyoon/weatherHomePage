@@ -183,7 +183,7 @@ function dailyShow() {
 
 function userSearch(e) {
   console.log(e);
-  inputLanguageChange(e);
+  inputLanguageChange();
   if (e.keyCode == 13 && userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
     console.log(userInput);
@@ -192,7 +192,7 @@ function userSearch(e) {
   }
 }
 function clickSearch() {
-  inputLanguageChange(e);
+  inputLanguageChange();
   if (userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
     console.log(userInput);
@@ -201,7 +201,7 @@ function clickSearch() {
   }
 }
 
-function inputLanguageChange(e) {
+function inputLanguageChange() {
   let language = document.getElementById("userInput").value;
   console.log(language);
   if (language == "서울") {
