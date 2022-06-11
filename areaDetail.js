@@ -171,7 +171,6 @@ getWeather = (lat, lon) => {
 
 init();
 
-// 검색해서 상세 페이지 들어가게 되면 화살표 함수로 했을때 에러 나서 function  으로 해둠
 function hourlyShow() {
   document.querySelector("#hourlyArticle").style.display = "";
   document.querySelector("#dailyArticle").style.display = "none";
@@ -189,6 +188,7 @@ function userSearch(e) {
     console.log(userInput);
   } else if (e.keyCode == 13 && userInput == "") {
     alert("지역을 입력해주세요.");
+    document.getElementById("userInput").value = "";
   }
 }
 function clickSearch() {
@@ -198,6 +198,7 @@ function clickSearch() {
     console.log(userInput);
   } else {
     alert("지역을 입력해주세요.");
+    document.getElementById("userInput").value = "";
   }
 }
 
