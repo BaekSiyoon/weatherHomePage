@@ -183,7 +183,7 @@ function dailyShow() {
 
 function userSearch(e) {
   console.log(e);
-  userInput = document.getElementById("userInput").value;
+  inputLanguageChange(e);
   if (e.keyCode == 13 && userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
     console.log(userInput);
@@ -192,11 +192,47 @@ function userSearch(e) {
   }
 }
 function clickSearch() {
-  userInput = document.getElementById("userInput").value;
+  inputLanguageChange(e);
   if (userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
     console.log(userInput);
   } else {
     alert("지역을 입력해주세요.");
+  }
+}
+
+function inputLanguageChange(e) {
+  let language = document.getElementById("userInput").value;
+  console.log(language);
+  if (language == "서울") {
+    userInput = "seoul";
+  } else if (language == "춘천") {
+    userInput = "chuncheon";
+  } else if (language == "강릉") {
+    userInput = "gangneung";
+  } else if (language == "청주") {
+    userInput = "cheongju";
+  } else if (language == "수원") {
+    userInput = "suwon";
+  } else if (language == "안동") {
+    userInput = "andong";
+  } else if (language == "대전") {
+    userInput = "daejeon";
+  } else if (language == "전주") {
+    userInput = "jeonju";
+  } else if (language == "대구") {
+    userInput = "daegu";
+  } else if (language == "광주") {
+    userInput = "gwangju";
+  } else if (language == "부산") {
+    userInput = "busan";
+  } else if (language == "여수") {
+    userInput = "yeosu";
+  } else if (language == "목포") {
+    userInput = "mokpo";
+  } else if (language == "울산") {
+    userInput = "ulsan";
+  } else if (language == "제주") {
+    userInput = "jeju";
   }
 }
