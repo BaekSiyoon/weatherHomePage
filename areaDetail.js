@@ -71,10 +71,8 @@ if (
           if (xhr.status === 200) {
             // 응답 코드
             resolve(JSON.parse(xhr.response));
-            console.log(JSON.parse(xhr.response).main.temp);
           } else {
             reject(new Error(xhr.status));
-            console.log(new Error(xhr.status));
           }
         };
       });
@@ -94,12 +92,10 @@ getWeather = (lat, lon) => {
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=kr&appid=853899f51609807cba760241d3c22b50&units=metric`
   )
     .then(function (response) {
-      console.log(response.json);
       return response.json();
     })
     .then(function (json) {
       //온도, 위치, 날씨묘사, 날씨아이콘을 받는다.
-      console.log(json);
       const Icon = json.current.weather[0].icon; // 아이콘 뽑는 공식
       const temperature = Math.floor(json.current.temp); // 온도
       const description = json.current.weather[0].description; // 날씨상태
@@ -179,32 +175,29 @@ function dailyShow() {
   document.querySelector("#hourlyArticle").style.display = "none";
   document.querySelector("#dailyArticle").style.display = "";
 }
-
+// 사용자 검색시
 function userSearch(e) {
-  console.log(e);
   inputLanguageChange();
   if (e.keyCode == 13 && userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
-    console.log(userInput);
   } else if (e.keyCode == 13 && userInput == "") {
     alert("지역을 입력해주세요.");
     document.getElementById("userInput").value = "";
   }
 }
+// 사용자 검색 버튼 클릭시
 function clickSearch() {
   inputLanguageChange();
   if (userInput != "") {
     location.href = `areaDetail.html?areaName=${userInput}`;
-    console.log(userInput);
   } else {
     alert("지역을 입력해주세요.");
     document.getElementById("userInput").value = "";
   }
 }
-
+// 사용자 검색 언어 > 데이터로 보낼 언어 변경
 function inputLanguageChange() {
   let language = document.getElementById("userInput").value;
-  console.log(language);
   if (language == "서울") {
     userInput = "seoul";
   } else if (language == "춘천") {

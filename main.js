@@ -8,20 +8,15 @@ promiseGet = (url) => {
       if (xhr.status === 200) {
         // 응답 코드
         resolve(JSON.parse(xhr.response));
-        console.log(JSON.parse(xhr.response).main.temp);
       } else {
         reject(new Error(xhr.status));
-        console.log(new Error(xhr.status));
       }
     };
   });
 };
 
-// promiseGet 함수는 프로미스를 반환
-// 백령 이랑 울릉도 독도 없음
-
+// promiseGet 함수는 프로미스를 반환 (백령, 울릉도, 독도 지역 없음)
 // 서울 날씨
-
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
@@ -38,9 +33,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=chuncheon&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const chuncheon_temperature = Math.floor(response.main.temp);
-  const chuncheon_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const chuncheon_Icon = response.weather[0].icon;
   document.querySelector(
     "#chuncheon_img"
   ).src = `http://openweathermap.org/img/wn/${chuncheon_Icon}@2x.png`;
@@ -52,9 +46,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=gangneung&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const gangneung_temperature = Math.floor(response.main.temp);
-  const gangneung_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const gangneung_Icon = response.weather[0].icon;
   document.querySelector(
     "#gangneung_img"
   ).src = `http://openweathermap.org/img/wn/${gangneung_Icon}@2x.png`;
@@ -66,9 +59,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=cheongju-si&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const cheongjuSi_temperature = Math.floor(response.main.temp);
-  const cheongjuSi_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const cheongjuSi_Icon = response.weather[0].icon;
   document.querySelector(
     "#cheongjuSi_img"
   ).src = `http://openweathermap.org/img/wn/${cheongjuSi_Icon}@2x.png`;
@@ -80,9 +72,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=Suwon-si&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const suwonSi_temperature = Math.floor(response.main.temp);
-  const suwonSi_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const suwonSi_Icon = response.weather[0].icon;
   document.querySelector(
     "#suwonSi_img"
   ).src = `http://openweathermap.org/img/wn/${suwonSi_Icon}@2x.png`;
@@ -92,9 +83,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=Andong&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const andong_temperature = Math.floor(response.main.temp);
-  const andong_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const andong_Icon = response.weather[0].icon;
   document.querySelector(
     "#andong_img"
   ).src = `http://openweathermap.org/img/wn/${andong_Icon}@2x.png`;
@@ -104,9 +94,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=Daejeon&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const daejeon_temperature = Math.floor(response.main.temp);
-  const daejeon_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const daejeon_Icon = response.weather[0].icon;
   document.querySelector(
     "#daejeon_img"
   ).src = `http://openweathermap.org/img/wn/${daejeon_Icon}@2x.png`;
@@ -116,9 +105,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=Jeonju&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const jeonju_temperature = Math.floor(response.main.temp);
-  const jeonju_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const jeonju_Icon = response.weather[0].icon;
   document.querySelector(
     "#jeonju_img"
   ).src = `http://openweathermap.org/img/wn/${jeonju_Icon}@2x.png`;
@@ -128,9 +116,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=daegu&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const daegu_temperature = Math.floor(response.main.temp);
-  const daegu_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const daegu_Icon = response.weather[0].icon;
   document.querySelector(
     "#daegu_img"
   ).src = `http://openweathermap.org/img/wn/${daegu_Icon}@2x.png`;
@@ -140,9 +127,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=Gwangju&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const gwangju_temperature = Math.floor(response.main.temp);
-  const gwangju_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const gwangju_Icon = response.weather[0].icon;
   document.querySelector(
     "#gwangju_img"
   ).src = `http://openweathermap.org/img/wn/${gwangju_Icon}@2x.png`;
@@ -152,9 +138,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=busan&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const busan_temperature = Math.floor(response.main.temp);
-  const busan_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const busan_Icon = response.weather[0].icon;
   document.querySelector(
     "#busan_img"
   ).src = `http://openweathermap.org/img/wn/${busan_Icon}@2x.png`;
@@ -164,9 +149,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=yeosu&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const yeosu_temperature = Math.floor(response.main.temp);
-  const yeosu_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const yeosu_Icon = response.weather[0].icon;
   document.querySelector(
     "#yeosu_img"
   ).src = `http://openweathermap.org/img/wn/${yeosu_Icon}@2x.png`;
@@ -176,9 +160,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=mokpo&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const mokpo_temperature = Math.floor(response.main.temp);
-  const mokpo_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const mokpo_Icon = response.weather[0].icon;
   document.querySelector(
     "#mokpo_img"
   ).src = `http://openweathermap.org/img/wn/${mokpo_Icon}@2x.png`;
@@ -188,9 +171,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=ulsan&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const ulsan_temperature = Math.floor(response.main.temp);
-  const ulsan_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const ulsan_Icon = response.weather[0].icon;
   document.querySelector(
     "#ulsan_img"
   ).src = `http://openweathermap.org/img/wn/${ulsan_Icon}@2x.png`;
@@ -200,9 +182,8 @@ promiseGet(
 promiseGet(
   "https://api.openweathermap.org/data/2.5/weather?q=jeju&appid=853899f51609807cba760241d3c22b50&units=metric"
 ).then(function (response) {
-  // .then = fetch가 완료 된 후 실행됨
   const jeju_temperature = Math.floor(response.main.temp);
-  const jeju_Icon = response.weather[0].icon; // 아이콘 뽑는 공식
+  const jeju_Icon = response.weather[0].icon;
   document.querySelector(
     "#jeju_img"
   ).src = `http://openweathermap.org/img/wn/${jeju_Icon}@2x.png`;
