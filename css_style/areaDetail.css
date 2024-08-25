@@ -1,173 +1,169 @@
 #nav_st {
-    text-align: center;
-    margin: 3%;
+  text-align: center;
+  margin: 3%;
 }
 
 #areaDetail_div_st {
-    text-align: center;
+  text-align: center;
 }
 
 .all_body_st {
-    background-image: url('/img/background_image.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+  background-image: url("/img/background_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 #temperature {
-    font-weight: bolder;
-    font-size: xxx-large;
+  font-weight: bolder;
+  font-size: xxx-large;
 }
 
 #hourlyArticle {
-    display: flex;
-    margin: 4%;
-    justify-content: center;
+  display: flex;
+  margin: 4%;
+  justify-content: center;
 }
 
 #dailyArticle {
-    display: flex;
-    margin: 4%;
-    justify-content: center;
+  display: flex;
+  margin: 4%;
+  justify-content: center;
 }
 
 #buttonDivSt {
-    text-align: center;
-    margin: 3%;
+  text-align: center;
+  margin: 3%;
 }
 
 #hourlyButton,
 #dailyButton {
-    box-shadow: inset 0px 0px 0px 0px #bbdaf7;
-    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-    background-color: #79bbff;
-    border-radius: 10px;
-    border: 1px solid #84bbf3;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px 25px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #528ecc;
-
+  box-shadow: inset 0px 0px 0px 0px #bbdaf7;
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border-radius: 10px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 25px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
 }
 
 #hourlyButton:hover,
 #dailyButton:hover {
-    background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
-    background-color: #378de5;
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
 }
 
 #hourlyButton:active,
 #dailyButton:active {
-    position: relative;
-    top: 1px;
+  position: relative;
+  top: 1px;
 }
 
 .allDivSt {
-    display: table-cell;
-    margin: 3px;
-    border-style: outset;
-    padding: 2%;
-    border-radius: 30%;
-    border-color: #85b7ec;
+  display: table-cell;
+  margin: 3px;
+  border-style: outset;
+  padding: 2%;
+  border-radius: 30%;
+  border-color: #85b7ec;
 }
 
 .allSpanst {
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
-    font-weight: 500;
-    color: #4150d4;
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: 500;
+  color: #4150d4;
 }
 
-
 #sun_moon_DivSt {
-    display: inline-block;
-    margin: 0 1%;
+  display: inline-block;
+  margin: 0 1%;
 }
 
 #hum_uvi_DivSt {
-    display: inline-block;
-    margin: 0 1%;
-
+  display: inline-block;
+  margin: 0 1%;
 }
 
 #temp_divSt {
-    display: inline-block;
-    position: absolute;
-
+  display: inline-block;
+  position: absolute;
 }
 
 #temperature {
-    position: relative;
-    left: -10px;
-    color: #4150d4;
+  position: relative;
+  left: -10px;
+  color: #4150d4;
 }
 
 #description {
-    position: relative;
-    left: 10px;
-    color: #fff;
+  position: relative;
+  left: 10px;
+  color: #fff;
 }
 
 #currentWeather_img {
-    position: relative;
-    left: -16px;
+  position: relative;
+  left: -16px;
 }
 
 #userInput {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid #1f8de4;
-    width: 18%;
-    height: 16px;
-    text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #1f8de4;
+  width: 18%;
+  height: 16px;
+  text-align: center;
 }
 
 #inputTagImgSt {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid #1f8de4;
-    position: relative;
-    top: 8px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #1f8de4;
+  position: relative;
+  top: 8px;
 }
 
 #sunrise_time,
 #sunset_time,
 #humidity {
-    margin: 5px;
-    position: relative;
-    bottom: 5px;
-    color: #fff;
+  margin: 5px;
+  position: relative;
+  bottom: 5px;
+  color: #fff;
 }
 
 #uvi {
-    margin: 13px;
-    position: relative;
-    bottom: 5px;
-    color: #fff;
+  margin: 13px;
+  position: relative;
+  bottom: 5px;
+  color: #fff;
 }
 
 .div_center_st {
-    text-align: center;
+  text-align: center;
 }
 
 .allMarginSt {
-    margin: 8px;
-    position: relative;
-    bottom: 5px;
-    color: #fff;
+  margin: 8px;
+  position: relative;
+  bottom: 5px;
+  color: #fff;
 }
 
 .all_uvlMarginSt {
-    margin: 20px;
-    position: relative;
-    bottom: 5px;
-    color: #fff;
+  margin: 20px;
+  position: relative;
+  bottom: 5px;
+  color: #fff;
 }

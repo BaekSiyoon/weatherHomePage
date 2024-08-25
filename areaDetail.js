@@ -2,15 +2,20 @@ let num = 0; // 위도 경도 기반 areaDetail 변수
 let clickNumber = 0; // cilckAreaDetail 변수
 let userInput = ""; // 검색창에 사용자 입력값
 
+const isProduction = window.location.hostname === "baeksiyoon.github.io";
+const baseUrl = isProduction
+  ? "https://github.com/BaekSiyoon/weatherHomePage"
+  : "http://127.0.0.1:5500/areaDetail.html";
+
+let targetUrl = `${baseUrl}/areaDetail.html`;
+// window.location.href = targetUrl;
+
 init = () => {
   askForCoords();
 };
 
 //사용자 위치 물어보고 사용자가 거부시 메인 화면으로 이동
-if (
-  num == 0 &&
-  window.location.href == "http://127.0.0.1:5500/areaDetail.html"
-) {
+if (num == 0 && window.location.href == targetUrl) {
   askForCoords = () => {
     if (
       confirm(
@@ -35,10 +40,7 @@ if (
   };
 }
 
-if (
-  clickNumber == 0 &&
-  window.location.href != "http://127.0.0.1:5500/areaDetail.html"
-) {
+if (clickNumber == 0 && window.location.href != targetUrl) {
   clickAreaDetailPage = (area_name) => {
     let areaName_ = area_name.value;
     location.href = `areaDetail.html?areaName=${areaName_}`;
@@ -55,9 +57,9 @@ if (
   };
 
   let areaName = getParameterByName("areaName");
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${areaName}&appid=853899f51609807cba760241d3c22b50&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${areaName}&appid=2ef89e773508ac1bce70326ca4dd74e1&units=metric`;
 
-  if (window.location.href != "http://127.0.0.1:5500/index.html") {
+  if (window.location.href != targetUrl) {
     // 상세 페이지에서만 실행
     let lat = "";
     let lon = "";
@@ -89,12 +91,13 @@ if (
 //날씨 api를 통해 날씨에 관련된 정보들을 받아온다.
 getWeather = (lat, lon) => {
   fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=kr&appid=853899f51609807cba760241d3c22b50&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=2ef89e773508ac1bce70326ca4dd74e1&units=metric`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
+      console.log("json.current.weather[0].icon :: " + JSON.stringify(json));
       //온도, 위치, 날씨묘사, 날씨아이콘을 받는다.
       const Icon = json.current.weather[0].icon; // 아이콘 뽑는 공식
       const temperature = Math.floor(json.current.temp); // 온도
